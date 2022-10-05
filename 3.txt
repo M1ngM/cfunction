@@ -1,0 +1,32 @@
+//包含标准输入输出函数
+#include<stdio.h>
+//字符串处理函数 
+#include<string.h> 
+//基本框架如下，请在此添加‘反序输出’的代码
+/********** 修改以下代码 **********/
+
+int main()
+{
+	void antitone(char ch[ ]);
+	char ch[50];
+	
+	gets(ch);
+	antitone(ch);         //调用函数
+	printf("%s\n", ch);   //输出反序存放的字符串
+	return 0;
+}
+ 
+void antitone(char ch[ ])
+{
+	char t;
+	int i, j;
+	for ( i = 0,j=strlen(ch); i < strlen(ch)/2; i++,j--)    //strlen是测字符串长度的函数
+	{
+		t = ch[i];
+		ch[i] = ch[j - 1];
+		ch[j - 1] = t;
+	}
+}
+
+
+/********** 修改代码区间 **********/
